@@ -1,5 +1,5 @@
 FROM php:5.5-apache
-COPY ../src.new/ /var/www/html
+COPY src.new /var/www/html
 EXPOSE 80 443
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
