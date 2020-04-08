@@ -1,1 +1,1 @@
-docker run -p 80:80 -p 443:443 -v /mnt/d/Codes/src/:/var/www/html -t webserver_php7.4
+docker run -p 80:80 -v /mnt/d/Codes/src/:/var/www/html -t webserver_php7.4

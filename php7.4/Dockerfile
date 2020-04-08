@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 COPY src.new /var/www/html
-EXPOSE 80 443
+EXPOSE 80
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
