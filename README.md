@@ -3,7 +3,7 @@
 
 ## Requirements
 External Source Location
-> ~/Code/src
+> ~/Codes/src
 
 ## WSL Mount Drive Script
 ```bash
