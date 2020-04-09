@@ -16,5 +16,5 @@ RUN apt-get update && \
     sqlite3 \
     libsqlite3-dev && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/  --with-jpeg-dir=/usr/include/ && \
-    docker-php-ext-install gd pdo pdo_mysql pdo_sqlite zip gmp bcmath pcntl ldap sysvmsg exif \
+    docker-php-ext-install gd pdo pdo_mysql pdo_sqlite mysqli zip gmp bcmath pcntl ldap sysvmsg exif \
 && a2enmod rewrite
