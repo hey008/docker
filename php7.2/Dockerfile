@@ -2,8 +2,6 @@ FROM php:7.2-apache
 COPY src.new /var/www/html
 EXPOSE 80 443
 
-# RUN apt-get update
-# RUN apt-get install nano
 RUN mkdir /etc/apache2/ssl
 RUN cp ssl.conf /etc/apache2/sites-enabled/ssl.conf
 RUN cp apache.crt /etc/apache2/ssl/apache.crt
