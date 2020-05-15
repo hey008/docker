@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  webserver:
+    build: 
+      context: ./_docker/server-php.7.2
+    container_name: server-php.7.2
+    restart: 'always'
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www/laravel
+      - ./_docker/assets/sites-enabled:/etc/apache2/sites-enabled
+      - ./_docker/assets/ssl:/etc/apache2/ssl
+  database:
+    build:
+      context: ./_docker/server-mysql.5.7
+    container_name: server-mysql.5.7
+    restart: 'always'
+    ports:
+      - "127.0.0.1:3306:3306"
+    #volumes: 
+    #  - ./_docker/data.local/mysql:/var/lib/mysql
+    #  - ./_docker/data.local/mysql.log:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DOCKER_ROOTPASSWORD}
+      MYSQL_DATABASE: ${DOCKER_DATABASE}
+      MYSQL_USER: ${DOCKER_USERNAME}
+      MYSQL_PASSWORD: ${DOCKER_PASSWORD}
+  redis:
+    container_name: 'redis'
+    image: redis:latest
+    ports:
+      - "127.0.0.1:6379:6379"
